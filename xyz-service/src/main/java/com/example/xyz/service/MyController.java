@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class MyController {
 
     @Autowired
-    @Qualifier("firstRules")
+    @Qualifier("firstRuleSet")
     Rules firstRules;
 
     @Autowired
-    @Qualifier("secondRules")
+    @Qualifier("secondRuleSet")
     Rules secondRules;
 
-    @GetMapping
+    @GetMapping("first")
     String firstRulesEngineEndpoint() {
         RulesEngine rulesEngine = new DefaultRulesEngine();
         Facts facts = new Facts();
@@ -29,7 +29,7 @@ public class MyController {
         return facts.get("hello");
     }
 
-    @GetMapping
+    @GetMapping("second")
     String secondRulesEngineEndpoint() {
         RulesEngine rulesEngine = new DefaultRulesEngine();
         Facts facts = new Facts();
