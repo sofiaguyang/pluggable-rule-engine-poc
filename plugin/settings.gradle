@@ -1,0 +1,9 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}
+rootProject.name = 'plugin'
+
+include ':rule-engine-lib'
+project(":rule-engine-lib").projectDir = new File("../rule-engine-lib")
